@@ -14,7 +14,7 @@ function Register({setPage}){
 
         try{
             const response=await axios.post(
-                'http://localhost:5000/api/users/register',
+                'https://chat-application-y73g.onrender.com/api/users/register',
                 {
                     name,
                     email,
