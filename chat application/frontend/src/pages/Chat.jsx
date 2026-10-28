@@ -15,7 +15,7 @@ function Chat({ user, setUser }) {
     const loadUsers = async () => {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/users/${user.id}`,
+                `https://chat-application-y73g.onrender.com/api/users/${user.id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -35,7 +35,7 @@ function Chat({ user, setUser }) {
 
     // Connect to Socket.IO
     useEffect(() => {
-        const newSocket = io('http://localhost:5000', {
+        const newSocket = io('https://chat-application-y73g.onrender.com', {
             auth: {
                 token: token
             }
@@ -76,7 +76,7 @@ function Chat({ user, setUser }) {
 
         try {
             const conversationResponse = await fetch(
-                'http://localhost:5000/api/conversations',
+                'https://chat-application-y73g.onrender.com/api/conversations',
                 {
                     method: 'POST',
                     headers: {
@@ -97,7 +97,7 @@ function Chat({ user, setUser }) {
             setConversation(conversationData);
             // Load previous messages
             const messagesResponse = await fetch(
-                `http://localhost:5000/api/messages/${conversationData._id}`,
+                `https://chat-application-y73g.onrender.com/api/messages/${conversationData._id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
