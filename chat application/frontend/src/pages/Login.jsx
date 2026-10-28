@@ -14,7 +14,7 @@ function Login({setUser,setPage}){
 
         try{
             const response=await axios.post(
-                'http://localhost:5000/api/users/login',
+                'https://chat-application-y73g.onrender.com/api/users/login',
                 {
                     email,
                     password
